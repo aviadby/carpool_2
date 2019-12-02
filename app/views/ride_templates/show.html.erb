@@ -13,17 +13,21 @@
 
       <!-- Edit link ride start -->
       <div class="col">
-        <a href="/rides/<%= @ride.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit ride
-        </a>
+        <% if current_user == @ride.leader %>
+          <a href="/rides/<%= @ride.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit ride
+          </a>
+        <% end %>
       </div>
       <!-- Edit link ride end -->
 
       <!-- Delete link ride start -->
       <div class="col">
-        <a href="/delete_ride/<%= @ride.id %>" class="btn btn-block btn-outline-secondary">
-          Delete ride
-        </a>
+        <% if current_user == @ride.leader %>
+          <a href="/delete_ride/<%= @ride.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete ride
+          </a>
+        <% end %>
       </div>
       <!-- Delete link ride end -->
     </div>
