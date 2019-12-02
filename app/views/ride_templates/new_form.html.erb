@@ -46,15 +46,9 @@
   <!-- Label and input for departs end -->
 
   <!-- Label and input for ride_leader start -->
-  <div class="form-group">
-    <label for="ride_leader">
-      Ride leader
-    </label>
-
-    <!-- Input for ride_leader start -->
-    <%= select_tag(:ride_leader, options_from_collection_for_select(User.all, :id, :email, @ride.ride_leader), :class => "form-control") %>
-    <!-- Input for ride_leader end -->
-  </div>
+  <!-- Input for "ride_leader" start -->
+  <input type="hidden" name="ride_leader" value="<%= current_user.id %>">
+  <!-- Input for "ride_leader" end -->
   <!-- Label and input for ride_leader end -->
 
   <button class="btn btn-block btn-outline-secondary">

@@ -47,7 +47,7 @@ class RidesController < ApplicationController
     @ride.origin = params.fetch("origin")
     @ride.destination = params.fetch("destination")
     @ride.departs = params.fetch("departs")
-    @ride.ride_leader = params.fetch("ride_leader")
+    
 
     if @ride.valid?
       @ride.save
