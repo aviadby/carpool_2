@@ -57,6 +57,14 @@ class RidesController < ApplicationController
     end
   end
 
+  def destroy_row_from_leader
+    @ride = Ride.find(params.fetch("id_to_remove"))
+
+    @ride.destroy
+
+    redirect_to("/users/#{@ride.ride_leader}", notice: "Ride deleted successfully.")
+  end
+
   def destroy_row
     @ride = Ride.find(params.fetch("id_to_remove"))
 

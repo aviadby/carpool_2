@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_spot/:id_to_remove", { :controller => "spots", :action => "destroy_row" })
+  get("/delete_spot_from_ride/:id_to_remove", { :controller => "spots", :action => "destroy_row_from_ride" })
+  get("/delete_spot_from_joiner/:id_to_remove", { :controller => "spots", :action => "destroy_row_from_joiner" })
 
   #------------------------------
 
@@ -37,6 +39,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_ride/:id_to_remove", { :controller => "rides", :action => "destroy_row" })
+  get("/delete_ride_from_leader/:id_to_remove", { :controller => "rides", :action => "destroy_row_from_leader" })
 
   #------------------------------
 

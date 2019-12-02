@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Spots
+
+    <a data-toggle="collapse" href="#ride_spots_new_form">
+      Add spot
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @ride.spots.each do |spot| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/spots/<%= spot.id %>">
+          <%= spot.created_at %>
+        </a>
+        <!-- Show link end -->
+
+        <!-- Delete link start -->
+        <a href="/delete_spot_from_ride/<%= spot.id %>">
+          Delete
+        </a>
+        <!-- Delete link end -->
+
+      </li>
+    <% end %>
+
+    <div class="card-footer">
+      <div class="collapse" id="ride_spots_new_form">
+        <!-- New associationcollection form start -->
+
+        <!-- New associationcollection form end -->
+      </div>
+    </div>
+
+  </ul>
+</div>

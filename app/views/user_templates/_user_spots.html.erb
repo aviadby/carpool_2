@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Spots
+
+    <a data-toggle="collapse" href="#user_spots_new_form">
+      Add spot
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.spots.each do |spot| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/spots/<%= spot.id %>">
+          <%= spot.created_at %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

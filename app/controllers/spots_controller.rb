@@ -53,6 +53,22 @@ class SpotsController < ApplicationController
     end
   end
 
+  def destroy_row_from_joiner
+    @spot = Spot.find(params.fetch("id_to_remove"))
+
+    @spot.destroy
+
+    redirect_to("/users/#{@spot.joiner_id}", notice: "Spot deleted successfully.")
+  end
+
+  def destroy_row_from_ride
+    @spot = Spot.find(params.fetch("id_to_remove"))
+
+    @spot.destroy
+
+    redirect_to("/rides/#{@spot.ride_id}", notice: "Spot deleted successfully.")
+  end
+
   def destroy_row
     @spot = Spot.find(params.fetch("id_to_remove"))
 
