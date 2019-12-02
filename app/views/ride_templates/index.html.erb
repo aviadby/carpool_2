@@ -10,21 +10,17 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "ride_templates/rides_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 <div class="row mb-3">
   <div class="col-md-12">
     <%= render partial: "ride_templates/all_photos_map" %>
   </div>
 </div>
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -66,31 +62,22 @@
 
       <% @rides.each do |ride| %>
       <tr>
-        <!-- Display ride.id start -->
         <td>
           <%= ride.id %>
         </td>
-        <!-- Display ride.id end -->
 
-        <!-- Display ride.origin start -->
         <td>
           <%= ride.origin %>
         </td>
-        <!-- Display ride.origin end -->
 
-        <!-- Display ride.destination start -->
         <td>
           <%= ride.destination %>
         </td>
-        <!-- Display ride.destination end -->
 
-        <!-- Display ride.departs start -->
         <td>
           <%= ride.departs %>
         </td>
-        <!-- Display ride.departs end -->
 
-        <!-- Display ride.ride_leader start -->
         <td>
           <% if ride.leader.present? %>
             <a href="/users/<%= ride.leader.id %>">
@@ -98,19 +85,14 @@
             </a>
           <% end %>
         </td>
-        <!-- Display ride.ride_leader end -->
 
-        <!-- Display ride.created_at start -->
         <td>
           <%= time_ago_in_words(ride.created_at) %> ago
         </td>
-        <!-- Display ride.created_at end -->
 
-        <!-- Display ride.updated_at start -->
         <td>
           <%= time_ago_in_words(ride.updated_at) %> ago
         </td>
-        <!-- Display ride.updated_at end -->
 
         <td>
           <a href="/rides/<%= ride.id %>">

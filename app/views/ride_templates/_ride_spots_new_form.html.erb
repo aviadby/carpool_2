@@ -1,17 +1,8 @@
-<!-- Form spot start -->
 <form action="/create_spot_from_ride" method="post">
-<!-- Form spot end -->
 
-  <!-- Label and input for ride_id start -->
-  <!-- Input for ride_id start -->
   <input type="hidden" name="ride_id" value="<%= @ride.id %>">
-  <!-- Input for ride_id end -->
 
-  <!-- Label and input for joiner_id start -->
-  <!-- Input for "joiner_id" start -->
   <input type="hidden" name="joiner_id" value="<%= current_user.id %>">
-  <!-- Input for "joiner_id" end -->
-  <!-- Label and input for joiner_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create spot

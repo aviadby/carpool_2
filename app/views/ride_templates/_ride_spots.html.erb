@@ -10,28 +10,22 @@
   <ul class="list-group list-group-flush">
     <% @ride.spots.each do |spot| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/spots/<%= spot.id %>">
           <%= spot.created_at %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%if current_user == spot.joiner %>
           <a href="/delete_spot_from_ride/<%= spot.id %>">
             Delete
           </a>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="ride_spots_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "ride_templates/ride_spots_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

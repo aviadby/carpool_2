@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link ride start -->
       <div class="col">
         <% if current_user == @ride.leader %>
           <a href="/rides/<%= @ride.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link ride end -->
 
-      <!-- Delete link ride start -->
       <div class="col">
         <% if current_user == @ride.leader %>
           <a href="/delete_ride/<%= @ride.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,45 +26,37 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link ride end -->
     </div>
 
     <dl>
       <dt>
         Origin
       </dt>
-      <!-- Display origin start -->
       <dd>
         <div>
           <%= render partial: "ride_templates/one_photo_map" %>
         </div>
       </dd>
-      <!-- Display origin end -->
 
       <dt>
         Destination
       </dt>
-      <!-- Display destination start -->
       <dd>
         <div>
           <%= render partial: "ride_templates/one_photo_map" %>
         </div>
       </dd>
-      <!-- Display destination end -->
 
       <dt>
         Departs
       </dt>
-      <!-- Display departs start -->
       <dd>
         <%= @ride.departs %>
       </dd>
-      <!-- Display departs end -->
 
       <dt>
         Ride leader
       </dt>
-      <!-- Display ride_leader start -->
       <dd>
         <% if @ride.leader.present? %>
           <a href="/users/<%= @ride.ride_leader %>">
@@ -75,33 +64,26 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display ride_leader end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@ride.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@ride.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "ride_templates/ride_spots" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

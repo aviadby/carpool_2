@@ -4,24 +4,16 @@
 
 <hr>
 
-<!-- Form spot start -->
 <form action="/update_spot/<%= @spot.id %>" method="post">
-<!-- Form spot end -->
 
-  <!-- Label and input for ride_id start -->
   <div class="form-group">
     <label for="ride_id">
       Ride
     </label>
 
-    <!-- Input for ride_id start -->
     <%= select_tag(:ride_id, options_from_collection_for_select(Ride.all, :id, :created_at, @spot.ride_id), :class => "form-control") %>
-    <!-- Input for ride_id end -->
   </div>
-  <!-- Label and input for ride_id end -->
 
-  <!-- Label and input for joiner_id start -->
-  <!-- Label and input for joiner_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update spot
