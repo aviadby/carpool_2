@@ -63,7 +63,7 @@
     </label>
 
     <!-- Input for ride_leader start -->
-    <input type="text" id="ride_leader" name="ride_leader" class="form-control" value="<%= @ride.ride_leader %>">
+    <%= select_tag(:ride_leader, options_from_collection_for_select(User.all, :id, :email, @ride.ride_leader), :class => "form-control") %>
     <!-- Input for ride_leader end -->
   </div>
   <!-- Label and input for ride_leader end -->
