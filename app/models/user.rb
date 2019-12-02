@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :spots,
+             :foreign_key => "joiner_id",
+             :dependent => :destroy
+
   has_many   :rides,
              :foreign_key => "ride_leader",
              :dependent => :destroy
