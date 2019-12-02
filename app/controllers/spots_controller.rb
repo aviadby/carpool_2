@@ -57,7 +57,7 @@ class SpotsController < ApplicationController
     @spot = Spot.find(params.fetch("id_to_modify"))
 
     @spot.ride_id = params.fetch("ride_id")
-    @spot.joiner_id = params.fetch("joiner_id")
+    
 
     if @spot.valid?
       @spot.save

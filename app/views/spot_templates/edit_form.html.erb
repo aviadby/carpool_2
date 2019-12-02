@@ -21,15 +21,6 @@
   <!-- Label and input for ride_id end -->
 
   <!-- Label and input for joiner_id start -->
-  <div class="form-group">
-    <label for="joiner_id">
-      Joiner
-    </label>
-
-    <!-- Input for joiner_id start -->
-    <%= select_tag(:joiner_id, options_from_collection_for_select(User.all, :id, :email, @spot.joiner_id), :class => "form-control") %>
-    <!-- Input for joiner_id end -->
-  </div>
   <!-- Label and input for joiner_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
