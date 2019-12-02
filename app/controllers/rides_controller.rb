@@ -1,0 +1,67 @@
+class RidesController < ApplicationController
+  def index
+    @rides = Ride.all
+
+    render("ride_templates/index.html.erb")
+  end
+
+  def show
+    @ride = Ride.find(params.fetch("id_to_display"))
+
+    render("ride_templates/show.html.erb")
+  end
+
+  def new_form
+    @ride = Ride.new
+
+    render("ride_templates/new_form.html.erb")
+  end
+
+  def create_row
+    @ride = Ride.new
+
+    @ride.origin = params.fetch("origin")
+    @ride.destination = params.fetch("destination")
+    @ride.departs = params.fetch("departs")
+    @ride.ride_leader = params.fetch("ride_leader")
+
+    if @ride.valid?
+      @ride.save
+
+      redirect_back(:fallback_location => "/rides", :notice => "Ride created successfully.")
+    else
+      render("ride_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def edit_form
+    @ride = Ride.find(params.fetch("prefill_with_id"))
+
+    render("ride_templates/edit_form.html.erb")
+  end
+
+  def update_row
+    @ride = Ride.find(params.fetch("id_to_modify"))
+
+    @ride.origin = params.fetch("origin")
+    @ride.destination = params.fetch("destination")
+    @ride.departs = params.fetch("departs")
+    @ride.ride_leader = params.fetch("ride_leader")
+
+    if @ride.valid?
+      @ride.save
+
+      redirect_to("/rides/#{@ride.id}", :notice => "Ride updated successfully.")
+    else
+      render("ride_templates/edit_form_with_errors.html.erb")
+    end
+  end
+
+  def destroy_row
+    @ride = Ride.find(params.fetch("id_to_remove"))
+
+    @ride.destroy
+
+    redirect_to("/rides", :notice => "Ride deleted successfully.")
+  end
+end

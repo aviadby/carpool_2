@@ -1,0 +1,80 @@
+<!-- Validation failure messages -->
+<% if @ride.present? %>
+  <% if @ride.errors.any? %>
+    <% @ride.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new ride
+</h1>
+
+
+<hr>
+
+<!-- Form ride start -->
+<form action="/create_ride" method="post">
+<!-- Form ride end -->
+
+  <!-- Label and input for origin start -->
+  <div class="form-group">
+    <label for="origin">
+      Origin
+    </label>
+
+    <!-- Input for origin start -->
+    <input type="text" id="origin" name="origin" class="form-control" value="<%= @ride.origin %>">
+    <!-- Input for origin end -->
+  </div>
+  <!-- Label and input for origin end -->
+
+  <!-- Label and input for destination start -->
+  <div class="form-group">
+    <label for="destination">
+      Destination
+    </label>
+
+    <!-- Input for destination start -->
+    <input type="text" id="destination" name="destination" class="form-control" value="<%= @ride.destination %>">
+    <!-- Input for destination end -->
+  </div>
+  <!-- Label and input for destination end -->
+
+  <!-- Label and input for departs start -->
+  <div class="form-group">
+    <label for="departs">
+      Departs
+    </label>
+
+    <!-- Input for departs start -->
+    <input type="text" id="departs" name="departs" class="form-control" value="<%= @ride.departs %>">
+    <!-- Input for departs end -->
+  </div>
+  <!-- Label and input for departs end -->
+
+  <!-- Label and input for ride_leader start -->
+  <div class="form-group">
+    <label for="ride_leader">
+      Ride leader
+    </label>
+
+    <!-- Input for ride_leader start -->
+    <input type="text" id="ride_leader" name="ride_leader" class="form-control" value="<%= @ride.ride_leader %>">
+    <!-- Input for ride_leader end -->
+  </div>
+  <!-- Label and input for ride_leader end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create ride
+  </button>
+</form>
+
+<hr>
+
+<a href="/rides">
+  Go back
+</a>

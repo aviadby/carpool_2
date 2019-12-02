@@ -1,0 +1,91 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Ride #<%= @ride.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/rides" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link ride start -->
+      <div class="col">
+        <a href="/rides/<%= @ride.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit ride
+        </a>
+      </div>
+      <!-- Edit link ride end -->
+
+      <!-- Delete link ride start -->
+      <div class="col">
+        <a href="/delete_ride/<%= @ride.id %>" class="btn btn-block btn-outline-secondary">
+          Delete ride
+        </a>
+      </div>
+      <!-- Delete link ride end -->
+    </div>
+
+    <dl>
+      <dt>
+        Origin
+      </dt>
+      <!-- Display origin start -->
+      <dd>
+        <%= @ride.origin %>
+      </dd>
+      <!-- Display origin end -->
+
+      <dt>
+        Destination
+      </dt>
+      <!-- Display destination start -->
+      <dd>
+        <%= @ride.destination %>
+      </dd>
+      <!-- Display destination end -->
+
+      <dt>
+        Departs
+      </dt>
+      <!-- Display departs start -->
+      <dd>
+        <%= @ride.departs %>
+      </dd>
+      <!-- Display departs end -->
+
+      <dt>
+        Ride leader
+      </dt>
+      <!-- Display ride_leader start -->
+      <dd>
+        <%= @ride.ride_leader %>
+      </dd>
+      <!-- Display ride_leader end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@ride.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@ride.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
