@@ -1,0 +1,139 @@
+<%= search_form_for @q, :class => collapse_search_form, :id => "rides_filters" do |f| %>
+  <p class="lead">Narrow results:</p>
+
+  <div class="form-group">
+    <%= f.label :departs, "Departs" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <div class='input-group date' id='departsgteqPicker' data-target-input="nearest">
+          <%= f.text_field :departs_gteq, :class => "form-control datetimepicker-input", :placeholder => "Departs greater than or equal to", :data => {:target => '#departsgteqPicker'} %>
+          <div class="input-group-append" data-target='#departsgteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <div class='input-group date' id='departslteqPicker' data-target-input="nearest">
+          <%= f.text_field :departs_lteq, :class => "form-control datetimepicker-input", :placeholder => "Departs less than or equal to", :data => {:target => '#departslteqPicker'} %>
+          <div class="input-group-append" data-target='#departslteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#departsgteqPicker').datetimepicker({
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#departslteqPicker').datetimepicker({
+              useCurrent: false,
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#departsgteqPicker').on("dp.change", function (e) {
+              $('#departslteqPicker').data("DateTimePicker").minDate(e.date);
+          });
+          $('#departslteqPicker').on("dp.change", function (e) {
+              $('#departsgteqPicker').data("DateTimePicker").maxDate(e.date);
+          });
+      });
+  </script>
+
+  <div class="form-group">
+    <%= f.label :created_at, "Created at" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <div class='input-group date' id='created_atgteqPicker' data-target-input="nearest">
+          <%= f.text_field :created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "Created at greater than or equal to", :data => {:target => '#created_atgteqPicker'} %>
+          <div class="input-group-append" data-target='#created_atgteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <div class='input-group date' id='created_atlteqPicker' data-target-input="nearest">
+          <%= f.text_field :created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "Created at less than or equal to", :data => {:target => '#created_atlteqPicker'} %>
+          <div class="input-group-append" data-target='#created_atlteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#created_atgteqPicker').datetimepicker({
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#created_atlteqPicker').datetimepicker({
+              useCurrent: false,
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#created_atgteqPicker').on("dp.change", function (e) {
+              $('#created_atlteqPicker').data("DateTimePicker").minDate(e.date);
+          });
+          $('#created_atlteqPicker').on("dp.change", function (e) {
+              $('#created_atgteqPicker').data("DateTimePicker").maxDate(e.date);
+          });
+      });
+  </script>
+
+
+  <div class="form-group">
+    <%= f.label :leader_email_cont, "User email contains" %>
+    <%= f.text_field :leader_email_cont, :class => "form-control", :placeholder => "User email contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :created_at, "Spot Created at" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <div class='input-group date' id='spotsgteqcreated_atPicker' data-target-input="nearest">
+          <%= f.text_field :spots_created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "Spot Created at greater than or equal to", :data => {:target => '#spotsgteqcreated_atPicker'} %>
+          <div class="input-group-append" data-target='#spotsgteqcreated_atPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <div class='input-group date' id='spotslteqcreated_atPicker' data-target-input="nearest">
+          <%= f.text_field :spots_created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "Spot Created at less than or equal to", :data => {:target => '#spotslteqcreated_atPicker'} %>
+          <div class="input-group-append" data-target='#spotslteqcreated_atPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#spotsgteqcreated_atPicker').datetimepicker({
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#spotslteqcreated_atPicker').datetimepicker({
+              useCurrent: false,
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#spotsgteqcreated_atPicker').on("dp.change", function (e) {
+              $('#spotslteqcreated_atPicker').data("DateTimePicker").minDate(e.date);
+          });
+          $('#spotslteqcreated_atPicker').on("dp.change", function (e) {
+              $('#spotsgteqcreated_atPicker').data("DateTimePicker").maxDate(e.date);
+          });
+      });
+  </script>
+
+
+  <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
+
+  <a href="/rides" class="btn btn-outline-secondary btn-block mb-1">Clear filters</a>
+
+<% end %>
+
+<a class="btn btn-outline-secondary btn-block mb-1" data-toggle="collapse" href="#rides_filters">
+  Show filters
+</a>

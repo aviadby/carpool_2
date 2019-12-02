@@ -10,7 +10,8 @@ class SpotsController < ApplicationController
   end
 
   def index
-    @spots = current_user.spots.page(params[:page]).per(10)
+    @q = current_user.spots.ransack(params[:q])
+    @spots = @q.result(:distinct => true).includes(:joiner, :ride).page(params[:page]).per(10)
 
     render("spot_templates/index.html.erb")
   end
