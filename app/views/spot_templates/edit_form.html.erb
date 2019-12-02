@@ -15,7 +15,7 @@
     </label>
 
     <!-- Input for ride_id start -->
-    <input type="text" id="ride_id" name="ride_id" class="form-control" value="<%= @spot.ride_id %>">
+    <%= select_tag(:ride_id, options_from_collection_for_select(Ride.all, :id, :created_at, @spot.ride_id), :class => "form-control") %>
     <!-- Input for ride_id end -->
   </div>
   <!-- Label and input for ride_id end -->
