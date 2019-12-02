@@ -38,7 +38,9 @@
       </dt>
       <!-- Display origin start -->
       <dd>
-        <%= @ride.origin %>
+        <div>
+          <%= render partial: "ride_templates/one_photo_map" %>
+        </div>
       </dd>
       <!-- Display origin end -->
 
@@ -47,7 +49,9 @@
       </dt>
       <!-- Display destination start -->
       <dd>
-        <%= @ride.destination %>
+        <div>
+          <%= render partial: "ride_templates/one_photo_map" %>
+        </div>
       </dd>
       <!-- Display destination end -->
 

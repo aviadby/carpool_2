@@ -11,6 +11,16 @@ class RidesController < ApplicationController
 
   def index
     @rides = Ride.all
+    @location_hash = Gmaps4rails.build_markers(@rides.where.not(:destination_latitude => nil)) do |ride, marker|
+      marker.lat ride.destination_latitude
+      marker.lng ride.destination_longitude
+      marker.infowindow "<h5><a href='/rides/#{ride.id}'>#{ride.created_at}</a></h5><small>#{ride.destination_formatted_address}</small>"
+    end
+    @location_hash = Gmaps4rails.build_markers(@rides.where.not(:origin_latitude => nil)) do |ride, marker|
+      marker.lat ride.origin_latitude
+      marker.lng ride.origin_longitude
+      marker.infowindow "<h5><a href='/rides/#{ride.id}'>#{ride.created_at}</a></h5><small>#{ride.origin_formatted_address}</small>"
+    end
 
     render("ride_templates/index.html.erb")
   end
