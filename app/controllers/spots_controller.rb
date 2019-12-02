@@ -10,7 +10,7 @@ class SpotsController < ApplicationController
   end
 
   def index
-    @spots = Spot.all
+    @spots = current_user.spots.page(params[:page]).per(10)
 
     render("spot_templates/index.html.erb")
   end
