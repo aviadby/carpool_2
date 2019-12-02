@@ -88,7 +88,11 @@
 
         <!-- Display ride.ride_leader start -->
         <td>
-          <%= ride.leader.email %>
+          <% if ride.leader.present? %>
+            <a href="/users/<%= ride.leader.id %>">
+              <%= ride.leader.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display ride.ride_leader end -->
 

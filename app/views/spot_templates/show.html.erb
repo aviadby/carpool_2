@@ -38,7 +38,11 @@
       </dt>
       <!-- Display ride_id start -->
       <dd>
-        <%= @spot.ride_id %>
+        <% if @spot.ride.present? %>
+          <a href="/rides/<%= @spot.ride_id %>">
+            <%= @spot.ride.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display ride_id end -->
 
@@ -47,7 +51,11 @@
       </dt>
       <!-- Display joiner_id start -->
       <dd>
-        <%= @spot.joiner_id %>
+        <% if @spot.joiner.present? %>
+          <a href="/users/<%= @spot.joiner_id %>">
+            <%= @spot.joiner.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display joiner_id end -->
 

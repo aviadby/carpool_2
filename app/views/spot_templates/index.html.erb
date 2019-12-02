@@ -58,13 +58,21 @@
 
         <!-- Display spot.ride_id start -->
         <td>
-          <%= spot.ride.created_at %>
+          <% if spot.ride.present? %>
+            <a href="/rides/<%= spot.ride.id %>">
+              <%= spot.ride.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display spot.ride_id end -->
 
         <!-- Display spot.joiner_id start -->
         <td>
-          <%= spot.joiner.email %>
+          <% if spot.joiner.present? %>
+            <a href="/users/<%= spot.joiner.id %>">
+              <%= spot.joiner.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display spot.joiner_id end -->
 

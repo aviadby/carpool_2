@@ -69,7 +69,11 @@
       </dt>
       <!-- Display ride_leader start -->
       <dd>
-        <%= @ride.ride_leader %>
+        <% if @ride.leader.present? %>
+          <a href="/users/<%= @ride.ride_leader %>">
+            <%= @ride.leader.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display ride_leader end -->
 
