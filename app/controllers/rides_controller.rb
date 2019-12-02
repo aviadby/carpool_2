@@ -10,7 +10,7 @@ class RidesController < ApplicationController
   end
 
   def index
-    @rides = Ride.all
+    @rides = Ride.page(params[:page]).per(10)
     @location_hash = Gmaps4rails.build_markers(@rides.where.not(:destination_latitude => nil)) do |ride, marker|
       marker.lat ride.destination_latitude
       marker.lng ride.destination_longitude
