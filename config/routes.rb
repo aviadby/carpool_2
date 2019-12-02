@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "rides#index"
   # Routes for the Spot resource:
 
   # CREATE
