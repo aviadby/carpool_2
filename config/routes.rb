@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Spot resource:
+
+  # CREATE
+  get("/spots/new", { :controller => "spots", :action => "new_form" })
+  post("/create_spot", { :controller => "spots", :action => "create_row" })
+
+  # READ
+  get("/spots", { :controller => "spots", :action => "index" })
+  get("/spots/:id_to_display", { :controller => "spots", :action => "show" })
+
+  # UPDATE
+  get("/spots/:prefill_with_id/edit", { :controller => "spots", :action => "edit_form" })
+  post("/update_spot/:id_to_modify", { :controller => "spots", :action => "update_row" })
+
+  # DELETE
+  get("/delete_spot/:id_to_remove", { :controller => "spots", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Ride resource:
 
   # CREATE

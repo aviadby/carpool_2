@@ -1,0 +1,73 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Spot #<%= @spot.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/spots" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link spot start -->
+      <div class="col">
+        <a href="/spots/<%= @spot.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit spot
+        </a>
+      </div>
+      <!-- Edit link spot end -->
+
+      <!-- Delete link spot start -->
+      <div class="col">
+        <a href="/delete_spot/<%= @spot.id %>" class="btn btn-block btn-outline-secondary">
+          Delete spot
+        </a>
+      </div>
+      <!-- Delete link spot end -->
+    </div>
+
+    <dl>
+      <dt>
+        Ride
+      </dt>
+      <!-- Display ride_id start -->
+      <dd>
+        <%= @spot.ride_id %>
+      </dd>
+      <!-- Display ride_id end -->
+
+      <dt>
+        Joiner
+      </dt>
+      <!-- Display joiner_id start -->
+      <dd>
+        <%= @spot.joiner_id %>
+      </dd>
+      <!-- Display joiner_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@spot.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@spot.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

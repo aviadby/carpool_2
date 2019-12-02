@@ -1,0 +1,53 @@
+<!-- Validation failure messages -->
+<% if @spot.errors.any? %>
+  <% @spot.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit spot #<%= @spot.id %>
+</h1>
+
+<hr>
+
+<!-- Form spot start -->
+<form action="/update_spot/<%= @spot.id %>" method="post">
+<!-- Form spot end -->
+
+  <!-- Label and input for ride_id start -->
+  <div class="form-group">
+    <label for="ride_id">
+      Ride
+    </label>
+
+    <!-- Input for ride_id start -->
+    <input type="text" id="ride_id" name="ride_id" class="form-control" value="<%= @spot.ride_id %>">
+    <!-- Input for ride_id end -->
+  </div>
+  <!-- Label and input for ride_id end -->
+
+  <!-- Label and input for joiner_id start -->
+  <div class="form-group">
+    <label for="joiner_id">
+      Joiner
+    </label>
+
+    <!-- Input for joiner_id start -->
+    <input type="text" id="joiner_id" name="joiner_id" class="form-control" value="<%= @spot.joiner_id %>">
+    <!-- Input for joiner_id end -->
+  </div>
+  <!-- Label and input for joiner_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update spot
+  </button>
+</form>
+
+<hr>
+
+<a href="/spots">
+  Go back
+</a>
