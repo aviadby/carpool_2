@@ -6,6 +6,7 @@ class RidesController < ApplicationController
   end
 
   def show
+    @spot = Spot.new
     @ride = Ride.find(params.fetch("id_to_display"))
 
     render("ride_templates/show.html.erb")

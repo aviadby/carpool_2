@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/spots/new", { :controller => "spots", :action => "new_form" })
   post("/create_spot", { :controller => "spots", :action => "create_row" })
+  post("/create_spot_from_ride", { :controller => "spots", :action => "create_row_from_ride" })
 
   # READ
   get("/spots", { :controller => "spots", :action => "index" })

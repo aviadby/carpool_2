@@ -32,6 +32,21 @@ class SpotsController < ApplicationController
     end
   end
 
+  def create_row_from_ride
+    @spot = Spot.new
+
+    @spot.ride_id = params.fetch("ride_id")
+    @spot.joiner_id = params.fetch("joiner_id")
+
+    if @spot.valid?
+      @spot.save
+
+      redirect_to("/rides/#{@spot.ride_id}", notice: "Spot created successfully.")
+    else
+      render("spot_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @spot = Spot.find(params.fetch("prefill_with_id"))
 

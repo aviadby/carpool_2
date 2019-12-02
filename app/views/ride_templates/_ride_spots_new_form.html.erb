@@ -1,0 +1,25 @@
+<!-- Form spot start -->
+<form action="/create_spot_from_ride" method="post">
+<!-- Form spot end -->
+
+  <!-- Label and input for ride_id start -->
+  <!-- Input for ride_id start -->
+  <input type="hidden" name="ride_id" value="<%= @ride.id %>">
+  <!-- Input for ride_id end -->
+
+  <!-- Label and input for joiner_id start -->
+  <div class="form-group">
+    <label for="joiner_id">
+      Joiner
+    </label>
+
+    <!-- Input for joiner_id start -->
+    <input type="text" id="joiner_id" name="joiner_id" class="form-control" value="<%= @spot.joiner_id %>">
+    <!-- Input for joiner_id end -->
+  </div>
+  <!-- Label and input for joiner_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create spot
+  </button>
+</form>
