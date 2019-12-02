@@ -1,6 +1,9 @@
 class Ride < ApplicationRecord
   # Direct associations
 
+  has_many   :spots,
+             :dependent => :destroy
+
   belongs_to :leader,
              :class_name => "User",
              :foreign_key => "ride_leader",

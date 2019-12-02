@@ -4,6 +4,8 @@ RSpec.describe Ride, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:spots) }
+
     it { should belong_to(:leader) }
 
     end

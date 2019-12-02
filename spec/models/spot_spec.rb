@@ -4,6 +4,8 @@ RSpec.describe Spot, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:ride) }
+
     it { should belong_to(:joiner) }
 
     end
