@@ -17,9 +17,11 @@
         <!-- Show link end -->
 
         <!-- Delete link start -->
-        <a href="/delete_spot_from_ride/<%= spot.id %>">
-          Delete
-        </a>
+        <%if current_user == spot.joiner %>
+          <a href="/delete_spot_from_ride/<%= spot.id %>">
+            Delete
+          </a>
+        <% end %>
         <!-- Delete link end -->
 
       </li>

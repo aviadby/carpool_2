@@ -13,17 +13,21 @@
 
       <!-- Edit link spot start -->
       <div class="col">
-        <a href="/spots/<%= @spot.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit spot
-        </a>
+        <% if current_user == @spot.joiner %>
+          <a href="/spots/<%= @spot.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit spot
+          </a>
+        <% end %>
       </div>
       <!-- Edit link spot end -->
 
       <!-- Delete link spot start -->
       <div class="col">
-        <a href="/delete_spot/<%= @spot.id %>" class="btn btn-block btn-outline-secondary">
-          Delete spot
-        </a>
+        <% if current_user == @spot.joiner %>
+          <a href="/delete_spot/<%= @spot.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete spot
+          </a>
+        <% end %>
       </div>
       <!-- Delete link spot end -->
     </div>
