@@ -14,7 +14,7 @@
     </label>
 
     <!-- Input for joiner_id start -->
-    <input type="text" id="joiner_id" name="joiner_id" class="form-control" value="<%= @spot.joiner_id %>">
+    <%= select_tag(:joiner_id, options_from_collection_for_select(User.all, :id, :email, @spot.joiner_id), :class => "form-control") %>
     <!-- Input for joiner_id end -->
   </div>
   <!-- Label and input for joiner_id end -->
